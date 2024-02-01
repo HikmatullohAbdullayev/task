@@ -9,11 +9,29 @@ import Step6 from './step/Step6'
 // import StepSwitch from "./step/StepSwitch"
 
 function App() {
-  const [step, setstep] = useState(1)
+  const [data, setData] = useState({
+    login:"",
+    password:"",
+    confirmPassword:"",
+    subscriptionType:"",
+    fristName:"",
+    lastName:"",
+    middleName:"",
+    brithDate:"",
+    email:"",
+    gender:"",
+    older18: false,
+    cardNumber:"",
+    personalData:false,
+    cookie: false,
+
+  })
 
   return (
+
    <>
-   <Setep1/>
+
+   <Setep1 data={data}/>
    <Step2/>
    <Step3/>
    <Step4/>
