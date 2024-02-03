@@ -74,7 +74,7 @@ if (step == 1){
           </div>
 
           <div className='w-[500px] mx-auto '>
-            <button onClick={handleClik } {data.password == data.confirmPassword ? setDisable(true) : disable}  className='p-3 bg-amber-300 rounded-lg '>Send</button>
+            <button onClick={handleClik }  className='p-3 bg-amber-300 rounded-lg '>Send</button>
           </div>
         </form>
       </div>
