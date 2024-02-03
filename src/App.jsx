@@ -50,7 +50,7 @@ if (step == 1){
     <>
       <div>
         <h1 className='text-2xl mb-10'>Setp - {step}</h1>
-        <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>{data.login}</h1>
+       {data.login ?  <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>{data.login }</h1> : <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>Marhamat ma'lumotingiz kiriting</h1>}
         {data.password == data.confirmPassword ?  <p className='text-green-700 p-4 w-[400px] mx-auto m-3 rounded-lg text-xl font-bold bg-green-300 '>Hammasi joyda, davom eting</p>  :  <p className=' text-red-700 p-4 rounded-lg text-xl font-bold bg-red-200 w-[400px] mx-auto m-3'>Parol xatoga o'xshaydi,  parolni qaytadan tering</p>  }
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
@@ -67,7 +67,7 @@ if (step == 1){
           </div>
           <div className='w-[500px] mx-auto '>
             <button onClick={handleClik }
-              disabled={disable} className='p-3 bg-amber-300 rounded-lg ' type='submit'> Send</button>
+              disabled={disable} className='p-3 bg-amber-300 rounded-lg ' type='submit'> Keyingisi</button>
           </div>
         </form>
       </div>
@@ -90,8 +90,8 @@ if (step == 1){
 <select   id="subscription" className='w-full p-4 bg-orange-100 rounded-lg  '  name="subscription" >
 
   <option onChange={onChangeFun} required className='w-full p-4 bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'   >Oylik</option>
-  <option onChange={onChangeFun} required className='w-full p-4   bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'>yillik</option>
-  <option onChange={onChangeFun} required className='w-full p-4 bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'>kunlik</option>
+  <option onChange={onChangeFun} required className='w-full p-4   bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'>Yillik</option>
+  <option onChange={onChangeFun} required className='w-full p-4 bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'>Kunlik</option>
 </select>
               
           </div>
@@ -99,7 +99,7 @@ if (step == 1){
 
           <div className='w-[500px] mx-auto flex justify-center gap-2 '> 
             <button onClick={handleClikDec }  className='p-3  bg-amber-300 rounded-lg '>Ortga</button>
-            <button onClick={handleClik } className='p-3  bg-amber-300 rounded-lg '>Yuborish</button>
+            <button onClick={handleClik } className='p-3  bg-amber-300 rounded-lg '>Keyingisi</button>
           </div>
         </form>
       </div>
@@ -121,20 +121,20 @@ return (
             <input onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600  ' id='lastName' type="text" placeholder="Last name" value={data.lastName} name='lastName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg mx-auto '>
-          <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="fristName">frist name</label>
+          <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="fristName">Frist name</label>
             <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600  ' required type="text" id='fristName' placeholder="Frist name" value={data.fristName} name='fristName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
-            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="middleName">middle name</label>
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="middleName">Middle Name</label>
             <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="text" id='middleName' placeholder="Middle Name" value={data.middleName} name='middleName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
-            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="email">middle name</label>
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="email">Email</label>
             <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="email" id='email' placeholder="Email" value={data.email} name='email' />
           </div>
 
           <div className='w-[500px] mx-auto '>
-            <button onClick={handleClik } className='p-3 bg-amber-300 rounded-lg '>Send</button>
+            <button onClick={handleClik } className='p-3 bg-amber-300 rounded-lg '>Yuborish</button>
           </div>
         </form>
       </div>
