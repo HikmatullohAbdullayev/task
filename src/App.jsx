@@ -1,12 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-// import Setep1 from './step/Setep1'
-// import Step2 from './step/Step2'
-// import Step3 from './step/Step3'
-// import Step4 from './step/Step4'
-// import Step5 from './step/Step5'
-// import Step6 from './step/Step6'
-// import StepSwitch from "./step/StepSwitch"
 
 function App() {
   const [step, setStep] = useState(1)
@@ -62,7 +55,7 @@ if (step == 1){
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
             <label className='p-3 bg-orange-300 m-3 rounded-lg  ' htmlFor="login"> Login</label>
-            <input onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' id='login' type="text" placeholder="Login" value={data.login} name='login' />
+            <input   onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' id='login' type="text" placeholder="Login" value={data.login} name='login' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg mx-auto '>
             <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="password">Password</label>
