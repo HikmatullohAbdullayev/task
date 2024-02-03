@@ -56,7 +56,7 @@ if (step == 1){
  
     <>
       <div>
-        <h1 className='text-2xl mb-10'>Setp -{step}</h1>
+        <h1 className='text-2xl mb-10'>Setp - {step}</h1>
         <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>{data.login}</h1>
         {data.password == data.confirmPassword ?  <p className='text-green-700 p-4 w-[400px] mx-auto m-3 rounded-lg text-xl font-bold bg-green-300 '>Hammasi joyda, davom eting</p>  :  <p className=' text-red-700 p-4 rounded-lg text-xl font-bold bg-red-200 w-[400px] mx-auto m-3'>Parol xatoga o'xshaydi,  parolni qaytadan tering</p>  }
         <form className="w-[800px] container mx-auto grid gap-2  ">
@@ -121,7 +121,7 @@ return (
  
     <>
       <div>
-        <h1 className='text-2xl mb-10'>Setp -{step}</h1>
+        <h1 className='text-2xl mb-10'>Setp - {step}</h1>
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
             <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="lastName"> Last name</label>
@@ -129,15 +129,15 @@ return (
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg mx-auto '>
           <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="fristName">frist name</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600  ' required type="text" id='fristName' placeholder="frist name" value={data.fristName} name='fristName' />
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600  ' required type="text" id='fristName' placeholder="Frist name" value={data.fristName} name='fristName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
             <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="middleName">middle name</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="text" id='middleName' placeholder="middleName" value={data.middleName} name='middleName' />
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="text" id='middleName' placeholder="Middle Name" value={data.middleName} name='middleName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
             <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="email">middle name</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="email" id='email' placeholder="email" value={data.email} name='email' />
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="email" id='email' placeholder="Email" value={data.email} name='email' />
           </div>
 
           <div className='w-[500px] mx-auto '>
