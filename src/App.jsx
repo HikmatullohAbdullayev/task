@@ -23,11 +23,13 @@ function App() {
     email:"",
     gender:"",
     older18: false,
-
+    
   })
+  
+  const [disable,setDisable] = useState(false)
+ 
 
   function  onChangeFun (event)  {
-console.log(event.target.value);
 const {name, value} = event.target;
 setData((prevData) => ({
   ...prevData, [name]: value,
@@ -42,13 +44,11 @@ const handleClik = (e) => {
 
 
 setStep(step+1)
-console.log(step);
 }
 const handleClikDec =(e) => {
  setStep(step - 1)
 }
 
-const [disable,setDisable] = useState(false)
 if (step == 1){
 
   return (
@@ -58,41 +58,27 @@ if (step == 1){
       <div>
         <h1 className='text-2xl mb-10'>Setp -{step}</h1>
         <h1>{data.login}</h1>
-        {data.password == data.confirmPassword ?  <p className='text-green-700'>Hammasi joyda</p>  :  <p className=' text-red-700'>Parolni qaytadan tering</p> }
+        {data.password == data.confirmPassword ?  <p className='text-green-700 p-4 w-[400px] mx-auto m-3 rounded-lg text-xl font-bold bg-green-300 '>Hammasi joyda, davom eting</p>  :  <p className=' text-red-700 p-4 rounded-lg text-xl font-bold bg-red-200 w-[400px] mx-auto m-3'>Parol xatoga o'xshaydi,  parolni qaytadan tering</p>  }
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
-            <label className='p-2 bg-slate-600 rounded-lg ' htmlFor="login"> Login</label>
-            <input onChange={onChangeFun} required className='w-full p-4 bg-gray-300 rounded-lg  ' id='login' type="text" placeholder="login" value={data.login} name='login' />
+            <label className='p-3 bg-orange-300 m-3 rounded-lg  ' htmlFor="login"> Login</label>
+            <input onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' id='login' type="text" placeholder="Login" value={data.login} name='Login' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg mx-auto '>
-            <label className='p-2 rounded-lg  bg-slate-600' htmlFor="password">Password</label>
-            <input onChange={onChangeFun} className='w-full p-4 rounded-lg  bg-gray-300 ' required type="password" id='password' placeholder="password" value={data.password} name='password' />
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="password">Password</label>
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' required type="password" id='password' placeholder="password" value={data.password} name='password' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
-            <label className='p-2 bg-slate-600 rounded-lg ' htmlFor="confirmPassword">Confirm Password</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-gray-300 rounded-lg  ' required type="password" id='confirmPassword' placeholder="confirmPassword" value={data.confirmPassword} name='confirmPassword' />
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="confirmPassword">Confirm Password</label>
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' required type="password" id='confirmPassword' placeholder="confirmPassword" value={data.confirmPassword} name='confirmPassword' />
           </div>
-
           <div className='w-[500px] mx-auto '>
-            <button onClick={handleClik }  className='p-3 bg-amber-300 rounded-lg '>Send</button>
+            <button onClick={handleClik }
+              disabled={disable} className='p-3 bg-amber-300 rounded-lg ' type='submit'> Send</button>
           </div>
         </form>
       </div>
    
-   
-
- 
-       
-   
-
-
-
-   {/* <Setep1 data={data}/>
-   <Step2/>
-   <Step3/>
-   <Step4/>
-   <Step5/>
-   <Step6/> */}
       
    </>
   )
@@ -106,21 +92,21 @@ if (step == 1){
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
         
-            <label className='p-2 bg-slate-600 rounded-lg ' htmlFor="narxi">Narxni Tanlash</label>
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="narxi">Narxni Tanlash</label>
 
-<select   id="subscription"   name="subscription" >
+<select   id="subscription" className='w-full p-4 bg-orange-100 rounded-lg  '  name="subscription" >
 
-  <option onChange={onChangeFun} required className='w-full p-4 bg-gray-300 rounded-lg  ' value={data.subscription}  name='subscription'   >Oylik</option>
-  <option onChange={onChangeFun} required className='w-full p-4 bg-gray-300 rounded-lg  ' value={data.subscription}  name='subscription'>yillik</option>
-  <option onChange={onChangeFun} required className='w-full p-4 bg-gray-300 rounded-lg  ' value={data.subscription}  name='subscription'>kunlik</option>
+  <option onChange={onChangeFun} required className='w-full p-4 bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'   >Oylik</option>
+  <option onChange={onChangeFun} required className='w-full p-4   bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'>yillik</option>
+  <option onChange={onChangeFun} required className='w-full p-4 bg-orange-300 rounded-lg  ' value={data.subscription}  name='subscription'>kunlik</option>
 </select>
               
           </div>
           
 
-          <div className='w-[500px] mx-auto gap-2 '> 
-            <button onClick={handleClikDec }  className='p-3 bg-amber-300 rounded-lg '>Ortga</button>
-            <button onClick={handleClik } className='p-3 bg-amber-300 rounded-lg '>Yuborish</button>
+          <div className='w-[500px] mx-auto flex justify-center gap-2 '> 
+            <button onClick={handleClikDec }  className='p-3  bg-amber-300 rounded-lg '>Ortga</button>
+            <button onClick={handleClik } className='p-3  bg-amber-300 rounded-lg '>Yuborish</button>
           </div>
         </form>
       </div>
@@ -138,20 +124,20 @@ return (
         <h1 className='text-2xl mb-10'>Setp -{step}</h1>
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
-            <label className='p-2 bg-slate-600 rounded-lg ' htmlFor="lastName"> Last name</label>
-            <input onChange={onChangeFun} required className='w-full p-4 bg-gray-300 rounded-lg  ' id='lastName' type="text" placeholder="Last name" value={data.lastName} name='lastName' />
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="lastName"> Last name</label>
+            <input onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600  ' id='lastName' type="text" placeholder="Last name" value={data.lastName} name='lastName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg mx-auto '>
-          <label className='p-2 rounded-lg  bg-slate-600' htmlFor="fristName">frist name</label>
-            <input onChange={onChangeFun} className='w-full p-4 rounded-lg  bg-gray-300 ' required type="text" id='fristName' placeholder="frist name" value={data.fristName} name='fristName' />
+          <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="fristName">frist name</label>
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600  ' required type="text" id='fristName' placeholder="frist name" value={data.fristName} name='fristName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
-            <label className='p-2 bg-slate-600 rounded-lg ' htmlFor="middleName">middle name</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-gray-300 rounded-lg  ' required type="text" id='middleName' placeholder="middleName" value={data.middleName} name='middleName' />
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="middleName">middle name</label>
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="text" id='middleName' placeholder="middleName" value={data.middleName} name='middleName' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
-            <label className='p-2 bg-slate-600 rounded-lg ' htmlFor="email">middle name</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-gray-300 rounded-lg  ' required type="email" id='email' placeholder="email" value={data.email} name='email' />
+            <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="email">middle name</label>
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600   ' required type="email" id='email' placeholder="email" value={data.email} name='email' />
           </div>
 
           <div className='w-[500px] mx-auto '>
@@ -166,16 +152,17 @@ return (
 else{
 return(
 <>
-<p>Login: {data.login}</p>
-<p>Password: {data.password}</p>
-<p>Confirm Password: {data.confirmPassword}</p>
-<p>Last name {data.lastName}</p>
-<p>Frist name {data.fristName}</p>
-<p>Obuna {data.subscription}</p>
-<p>Middle name {data.middleName}</p>
-<p>Email: {data.email}</p>
-{/* <p>text {data.login}</p>
-<p>text {data.login}</p> */}
+<div className="flex flex-col gap-2 text-start mx-auto">
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Login:</span> {data.login}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Password:</span> {data.password}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Confirm Password:</span>{data.confirmPassword}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Last Name:</span> {data.lastName}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Frist Name:</span> {data.fristName}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Subscription:</span> {data.subscription}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Middle Name:</span> {data.middleName}</p>
+<p className='text-orange-500 text-xl font-bold'><span className='text-2xl mr-2 text-blue-600 font-medium'>Email:</span> {data.email}</p>
+</div>
+
 </>
 )
 }
