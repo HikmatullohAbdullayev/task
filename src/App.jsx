@@ -51,7 +51,7 @@ if (step == 1){
       <div>
         <h1 className='text-2xl mb-10'>Setp - {step}</h1>
        {data.login ?  <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>{data.login }</h1> : <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>Marhamat ma'lumotingiz kiriting</h1>}
-        {data.password == data.confirmPassword ?  <p className='text-green-700 p-4 w-[400px] mx-auto m-3 rounded-lg text-xl font-bold bg-green-300 '>Hammasi joyda, davom eting</p>  :  <p className=' text-red-700 p-4 rounded-lg text-xl font-bold bg-red-200 w-[400px] mx-auto m-3'>Parol xatoga o'xshaydi,  parolni qaytadan tering</p>  }
+        {data.password == data.confirmPassword ?  <p className='text-green-700 p-4 w-[400px] mx-auto m-3 rounded-lg text-xl font-bold bg-green-300 '>Hammasi joyda, davom eting</p>  :  <p className=' text-red-700 p-4 rounded-lg text-xl font-bold bg-red-200 w-[400px] mx-auto m-3'>Password va Config Password to'g'ri kelmadi! Qaytadan urunib ko'ring </p>  }
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
             <label className='p-3 bg-orange-300 m-3 rounded-lg  ' htmlFor="login"> Login</label>
