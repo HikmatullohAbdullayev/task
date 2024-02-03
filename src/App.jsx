@@ -57,20 +57,20 @@ if (step == 1){
     <>
       <div>
         <h1 className='text-2xl mb-10'>Setp -{step}</h1>
-        <h1>{data.login}</h1>
+        <h1 className='text-green-700 p-2 w-[400px] mx-auto m-1 rounded-lg text-xl font-bold bg-green-200 '>{data.login}</h1>
         {data.password == data.confirmPassword ?  <p className='text-green-700 p-4 w-[400px] mx-auto m-3 rounded-lg text-xl font-bold bg-green-300 '>Hammasi joyda, davom eting</p>  :  <p className=' text-red-700 p-4 rounded-lg text-xl font-bold bg-red-200 w-[400px] mx-auto m-3'>Parol xatoga o'xshaydi,  parolni qaytadan tering</p>  }
         <form className="w-[800px] container mx-auto grid gap-2  ">
           <div className='w-[500px]  flex flex-col text-start mx-auto '>
             <label className='p-3 bg-orange-300 m-3 rounded-lg  ' htmlFor="login"> Login</label>
-            <input onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' id='login' type="text" placeholder="Login" value={data.login} name='Login' />
+            <input onChange={onChangeFun} required className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' id='login' type="text" placeholder="Login" value={data.login} name='login' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg mx-auto '>
             <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="password">Password</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' required type="password" id='password' placeholder="password" value={data.password} name='password' />
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' required type="password" id='password' placeholder="Password" value={data.password} name='password' />
           </div>
           <div className='w-[500px]  flex flex-col text-start rounded-lg  mx-auto'>
             <label className='p-2 rounded-lg  bg-orange-300 m-3' htmlFor="confirmPassword">Confirm Password</label>
-            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' required type="password" id='confirmPassword' placeholder="confirmPassword" value={data.confirmPassword} name='confirmPassword' />
+            <input onChange={onChangeFun} className='w-full p-4 bg-orange-100 rounded-lg placeholder:text-orange-600 ' required type="password" id='confirmPassword' placeholder="Confirm Password" value={data.confirmPassword} name='confirmPassword' />
           </div>
           <div className='w-[500px] mx-auto '>
             <button onClick={handleClik }
